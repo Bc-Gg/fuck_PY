@@ -20,7 +20,7 @@ def func(mystr,pattern) ->list:
 
 def main():
     str = input()
-    pattern = r'(([\u4e00-\u9fa5])*(\s)*)([\u4e00-\u9fa5])(:|：)((\d{3}-\d{8}|\d{4}-\d{7}|\d{7})(\s*)(,|，))*(\d{3}-\d{8}|\d{4}-\d{7}|\d{7})'
+    pattern = r'(([\u4e00-\u9fa5]|[a-zA-z])*(\s)*)([\u4e00-\u9fa5]|[a-zA-z])(:|：)((\d{11})|((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})))'
     number_list = func(str,pattern)
     org = find_func(str)
     print(org)
