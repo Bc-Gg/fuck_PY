@@ -26,7 +26,7 @@ def main():
     sstr = str
     pattern = r'(([\u4e00-\u9fa5]|[a-zA-z])*(\s)*)([\u4e00-\u9fa5]|[a-zA-z])(:|：)((((\d{11})|((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})))(\s*)(,|，))*)((\d{11})|((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})))'
     org = find_func(sstr)
-    number_list = list(set(func(str,pattern)))
+    number_list = func(str,pattern)
     print(org)
     # print(number_list)
     for number in number_list:
