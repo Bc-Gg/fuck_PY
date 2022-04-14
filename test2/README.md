@@ -13,5 +13,5 @@ step3 binary_reader.py
 **改进**  
 双哈希+bitset优化
 ## 3 手撸bloom
-### 实现1 package_bloom.py 
+### 实现1 package_bloom.py （author ：hcy）
 ### 实现2 my_bloom.py 
