@@ -16,7 +16,7 @@ def main():
         url = query_queue.pop(0)
         page = analysis_page(url)
         temp_url_list = get_url(page, url)
-        print(temp_url_list)
+        # print(temp_url_list)
         # temp_tel_list = get_info(page)
         for url in temp_url_list:
             if not url in url_filter:

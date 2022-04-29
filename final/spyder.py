@@ -33,7 +33,7 @@ def get_info(page):
 
 def get_url(page, url):
     try:
-        print(url)
+        # print(url)
         baseurl = get_base_url(url)
         if page == None or baseurl == None:
             return []
