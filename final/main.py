@@ -11,19 +11,24 @@ url_filter = init_bloom(1e5)
 url_list = [init_url]
 
 def main():
+    cnt = 0
     print('enter main ')
     while len(query_queue) > 0:
         url = query_queue.pop(0)
         page = analysis_page(url)
         temp_url_list = get_url(page, url)
         # print(temp_url_list)
-        # temp_tel_list = get_info(page)
+        org, temp_tel_list = get_info(page)
+        print(org,temp_tel_list)
         for url in temp_url_list:
             if not url in url_filter:
-                print(url)
+                # print(url)
                 url_filter.add(url)
                 query_queue.append(url)
                 url_list.append(url)
+        cnt += 1
+        if cnt >200:
+            break
     print(url_list)
 
 

@@ -24,6 +24,8 @@ def get_base_url(url):
 
 
 def get_info(page):
+    if page == None:
+        return None, []
     page = bs(page.content, 'html.parser')
     content = str(page)
     org = find_org(content)
