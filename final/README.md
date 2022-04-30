@@ -11,10 +11,11 @@
 2. complete spyder part with single thread
 3. simple version of regex match of tel && name part
 4. using bloom filter
-
+#### 2022/04/30
+1. finish single thread version
+2. improve architecture to make this program work faster
+3. add saving as file part
+4. adequate for 80+
 
 ## undone
-1. complete regex match func
-2. sql query && insert
-3. multiprocessing version
-4. add some comments
+1.multiprocessing version
