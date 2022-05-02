@@ -1,7 +1,8 @@
 from myfilter import *
 from spyder import *
-from queue import Queue
 import pandas as pd
+import queue
+import threading
 #===================  Global  =================
 # query_queue = Queue()
 query_queue = [] # url 的 请求队列
@@ -62,9 +63,46 @@ def main():
     print("======== Spyder part is done. Saving data as files ======")
     tel_dict.update((key, str(val)) for key ,val in tel_dict.items())
     df = pd.DataFrame(list(tel_dict.items()))
-    df.to_csv('dataset.csv',encoding='utf8')
+    df.to_csv(path_or_buf='dataset.csv',encoding='utf8')
     print(df)
+
+def do_craw(url_queue:queue.Queue , html_queue: queue.Queue):
+    while True:
+        url = url_queue.get()
+        page = get_response(url)
+        html_queue.put((page,url))
+
+def do_parse(url_queue:queue.Queue , html_queue: queue.Queue):
+    while True:
+        page, url = html_queue.get()
+        if not page == None:
+            temp_url_list = get_url(page, url)
+            org, temp_tel_list = get_info(page)
+        else:
+            temp_url_list = []
+            org , temp_tel_list = None, []
+
+        # 将联系当时存储起来
+        if len(temp_tel_list) > 0:
+            save_tel(org, temp_tel_list)
+            print(org, temp_tel_list)
+
+        # 将之后要访问的url储存起来
+        for url in temp_url_list:
+            if not url in url_filter:
+                url_filter.add(url)
+                url_queue.put(url)
+                url_list.append(url)
 
 
 if __name__ == '__main__':
-    main()
+    url_queue = queue.Queue()
+    html_queue = queue.Queue()
+    url_queue.put(init_url)
+
+    for idx in range(100):
+        t = threading.Thread(target=do_craw , args=[url_queue, html_queue], name = f'craw No.{idx}')
+        t.start()
+    for idx in range(100):
+        t = threading.Thread(target= do_parse, args=[url_queue, html_queue], name = f'parse No.{idx}')
+        t.start()
