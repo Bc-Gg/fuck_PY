@@ -1,5 +1,6 @@
 # Traverse XMU
-**2022 Python Final Project**
+**2022 Python Final Project**  
+***multi-threads version***
 
 ### Startup
 1. main.py
@@ -15,7 +16,9 @@
 1. finish single thread version
 2. improve architecture to make this program work faster
 3. add saving as file part
-4. adequate for 80+
+4. adequate for full grade
 
-## undone
-1.multiprocessing version
+#### 2022/05/04
+1. multiprocessing version
+2. Robustness test
+3. debug mode

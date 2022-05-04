@@ -1,4 +1,4 @@
-from spyder import *
+from spider import *
 
 url = 'https://alumni.xmu.edu.cn/'
 page = analysis_page(url)

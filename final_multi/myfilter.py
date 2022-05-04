@@ -1,12 +1,15 @@
 # -*- coding = utf-8 -*-
 
-from pybloom_live import ScalableBloomFilter
+from pybloom_live import ScalableBloomFilter ,BloomFilter
 
 
-def init_bloom(size=2e8):
+def init_scale_bloom(size=2e8):
     bloom = ScalableBloomFilter(initial_capacity=size)
     return bloom
 
+def init_static_bloom(size=2e8):
+    bloom = BloomFilter(capacity=size)
+    return bloom
 
 '''
 def main():
