@@ -71,6 +71,8 @@ def do_craw(url_queue:queue.Queue , html_queue: queue.Queue):
         url = url_queue.get()
         page = get_response(url)
         html_queue.put((page,url))
+        if url_queue.empty():
+            break
 
 def do_parse(url_queue:queue.Queue , html_queue: queue.Queue):
     while True:
@@ -93,6 +95,8 @@ def do_parse(url_queue:queue.Queue , html_queue: queue.Queue):
                 url_filter.add(url)
                 url_queue.put(url)
                 url_list.append(url)
+        if url_queue.empty():
+            break
 
 
 if __name__ == '__main__':
@@ -100,9 +104,9 @@ if __name__ == '__main__':
     html_queue = queue.Queue()
     url_queue.put(init_url)
 
-    for idx in range(100):
+    for idx in range(10):
         t = threading.Thread(target=do_craw , args=[url_queue, html_queue], name = f'craw No.{idx}')
         t.start()
-    for idx in range(100):
+    for idx in range(10):
         t = threading.Thread(target= do_parse, args=[url_queue, html_queue], name = f'parse No.{idx}')
         t.start()
