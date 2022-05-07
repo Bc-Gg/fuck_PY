@@ -9,3 +9,5 @@
 1. upload final project
 ### 2022/05/04
 1. done final project
+### 2022/05/07
+1. new project computing_method
