@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/final_multi/dataset.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

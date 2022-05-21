@@ -1,4 +1,3 @@
-import chardet
 import requests as rq
 from bs4 import BeautifulSoup as bs
 from restr import *
@@ -14,6 +13,7 @@ def get_response(url):
     '''
     try:
         response = rq.request(url=url, method='get',timeout=1)
+        print(f'query {url}')
         response.raise_for_status()
         response.encoding = response.apparent_encoding
         if not response == None:
@@ -70,7 +70,7 @@ def get_url(soup, url):
                 context = str(a['href'])
                 if context.endswith('.htm') and not context.startswith('http'):
                     ans.add(baseurl + a['href'])
-                elif context.__contains__('xmu.edu.cn') and not context.endswith('pdf'):
+                elif (context.__contains__('xmu.edu.cn') and (context.endswith('html') or context.endswith('htm'))) or context.endswith('xmu.edu.cn'):
                     ans.add(a['href'])
         return ans
     except KeyError as ke:

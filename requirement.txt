@@ -1,0 +1,31 @@
+beautifulsoup4 @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-15cbtalq/beautifulsoup4_1650462161715/work
+bitarray==2.5.1
+Bottleneck @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-q_dytog6/bottleneck_1648041541248/work
+brotlipy==0.7.0
+bs4==0.0.1
+certifi==2021.10.8
+cffi @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/croot-jgj0vmyy/cffi_1642701117808/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+cryptography @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_5871d1ea-0250-4cd7-ac89-4b1e60514f5daqk8t0ow/croots/recipe/cryptography_1652101128666/work
+DingtalkChatbot==1.5.3
+idna @ file:///tmp/build/80754af9/idna_1637925883363/work
+lxml==4.8.0
+numexpr @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/croot-ny1mxojk/numexpr_1640704752206/work
+numpy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_ba5c3eaa-be93-4f42-ae24-fa720a3c6627m_sp7nbj/croots/recipe/numpy_and_numpy_base_1652801688716/work
+packaging @ file:///tmp/build/80754af9/packaging_1637314298585/work
+pandas==1.4.2
+pybloom-live==3.1.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyOpenSSL @ file:///opt/conda/conda-bld/pyopenssl_1643788558760/work
+pyparsing @ file:///tmp/build/80754af9/pyparsing_1635766073266/work
+PySocks @ file:///Users/ktietz/Code/oss/ci_pkgs/pysocks_1626781349491/work
+python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+pytz==2021.3
+requests @ file:///opt/conda/conda-bld/requests_1641824580448/work
+simplejson==3.17.6
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+soupsieve @ file:///tmp/build/80754af9/soupsieve_1636706018808/work
+tabulate==0.8.9
+tushare==1.2.85
+urllib3 @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_dc7bd08d-3aa9-4e45-9124-1c432b2bee1dmp2r0ell/croots/recipe/urllib3_1650640006820/work
+websocket-client==0.57.0
