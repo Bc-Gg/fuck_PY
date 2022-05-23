@@ -8,7 +8,7 @@ from spider import *
 
 # ===================  Global  =================
 # query_queue = Queue()
-cnt = 0 #只是统计爬取url的大致个数,就不加线程锁了
+# cnt = 0 #只是统计爬取url的大致个数,就不加线程锁了
 query_queue = []  # url 的 请求队列
 init_url = 'https://xmu.edu.cn/'  # 一切罪恶的源头
 query_queue.append(init_url)
@@ -37,9 +37,9 @@ def do_craw(url_queue: queue.Queue, html_queue: queue.Queue):
     while True:
         url = url_queue.get()
         # 观察线程状态
-        global cnt
-        print(threading.current_thread().name, f"crawing NO.{cnt} :{url}")
-        cnt+=1
+        # global cnt
+        # print(threading.current_thread().name, f"crawing NO.{cnt} :{url}")
+        # cnt+=1
         page = get_response(url)
         html_queue.put((page, url))
         if url_queue.empty():

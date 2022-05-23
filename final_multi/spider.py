@@ -13,7 +13,7 @@ def get_response(url):
     '''
     try:
         response = rq.request(url=url, method='get',timeout=1)
-        print(f'query {url}')
+        # print(f'query {url}')
         response.raise_for_status()
         response.encoding = response.apparent_encoding
         if not response == None:
